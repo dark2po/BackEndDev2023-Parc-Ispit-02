@@ -6,81 +6,15 @@
         "noVowels": 1
     },
     {
-        "word": "developer",
-        "noLetters": 9,
-        "noConsonants": 5,
-        "noVowels": 4
-    },
-    {
-        "word": "adasdoo",
-        "noLetters": 7,
-        "noConsonants": 3,
-        "noVowels": 4
-    },
-    {
-        "word": "adasdoo",
-        "noLetters": 7,
-        "noConsonants": 3,
-        "noVowels": 4
-    },
-    {
-        "word": "afsdfsd",
-        "noLetters": 7,
-        "noConsonants": 6,
-        "noVowels": 1
-    },
-    {
-        "word": "asd",
-        "noLetters": 3,
-        "noConsonants": 2,
-        "noVowels": 1
-    },
-    {
-        "word": "gtdgdfga",
-        "noLetters": 8,
-        "noConsonants": 7,
-        "noVowels": 1
-    },
-    {
-        "word": "fddsf",
-        "noLetters": 5,
-        "noConsonants": 5,
-        "noVowels": 0
-    },
-    {
-        "word": "test",
-        "noLetters": 4,
-        "noConsonants": 3,
-        "noVowels": 1
-    },
-    {
-        "word": "hbgffdgfdaaio",
-        "noLetters": 13,
-        "noConsonants": 9,
-        "noVowels": 4
-    },
-    {
-        "word": "DSFDSFDSOOOO",
-        "noLetters": 12,
+        "word": "asdfghjklio",
+        "noLetters": 11,
         "noConsonants": 8,
-        "noVowels": 4
+        "noVowels": 3
     },
     {
-        "word": "DSFDSFDSOOOO",
-        "noLetters": 12,
+        "word": "asdfghjklio",
+        "noLetters": 11,
         "noConsonants": 8,
-        "noVowels": 4
-    },
-    {
-        "word": "DSFDSFDSOOOO",
-        "noLetters": 12,
-        "noConsonants": 8,
-        "noVowels": 4
-    },
-    {
-        "word": "vdsfdsaaaa",
-        "noLetters": 10,
-        "noConsonants": 6,
-        "noVowels": 4
+        "noVowels": 3
     }
 ]
