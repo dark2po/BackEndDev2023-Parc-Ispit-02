@@ -16,5 +16,17 @@
         "noLetters": 11,
         "noConsonants": 8,
         "noVowels": 3
+    },
+    {
+        "word": "darko",
+        "noLetters": 5,
+        "noConsonants": 3,
+        "noVowels": 2
+    },
+    {
+        "word": "developer",
+        "noLetters": 9,
+        "noConsonants": 5,
+        "noVowels": 4
     }
 ]

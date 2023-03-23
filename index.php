@@ -1,10 +1,10 @@
 <?php
+// PHP dio aplikacije
 // deklariranje funkcije koja broji suglasnike i samoglasnike
 function consonants_vowels($word)
 {
     $word = strtolower($word);
-    $consonants = 0;
-    $vowels = 0;
+    $consonants = $vowels = 0;
     $allVowelLetters = ["a", "e", "i", "o", "u"];
     for ($i = 0; $i < strlen($word); $i++) {
         if (in_array($word[$i], $allVowelLetters)) {
@@ -18,6 +18,7 @@ function consonants_vowels($word)
 // čitanje podataka iz JSON datoteke u niz
 $wordsJson = file_get_contents('words.json');
 $words = json_decode($wordsJson, true);
+$_SESSION['header_text'] = 'Upišite željenu riječ!';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // ako je napravljen submit
     // dohvaćanje stringa iz forme POST metodom
@@ -25,10 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $noCharacters = strlen($word);
     [$noConsonants, $noVowels] = consonants_vowels($word);
 
+
     if ($noCharacters == 0) {
-        $_SESSION['error_message'] = 'Empty';
+        $_SESSION['header_text'] = 'Polje ne smije biti prazno!';
     } elseif ($noCharacters > $noConsonants + $noVowels) {
-        $_SESSION['error_message'] = 'NonLetterUsed';
+        $_SESSION['header_text'] = 'Koristite nedozvoljene znakove!<br>Koristite samo slova engleske abecede.';
     } else {
         $words[] = [
             'word' => $word,
@@ -74,13 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="center">
         <?php
-        if ($_SESSION['error_message'] == NULL) {
-            echo '<div><h1>Upišite željenu riječ!</h1></div>';
-        } elseif ($_SESSION['error_message'] == 'Empty') {
-            echo '<div><h1>Polje ne smije biti prazno!</h1></div>';
-        } elseif ($_SESSION['error_message'] == 'NonLetterUsed') {
-            echo '<div><h1>Koristite nedozvoljene znakove!<br>Koristite samo slova.</h1></div>';
-        }
+        //if ($_SESSION['header_text'] == NULL) {
+        //    echo '<div><h1>Upišite željenu riječ!</h1></div>';
+        //} elseif ($_SESSION['header_text'] == 'Empty') {
+        //    echo '<div><h1>Polje ne smije biti prazno!</h1></div>';
+        //} elseif ($_SESSION['header_text'] == 'NonLetterUsed') {
+        //    echo '<div><h1>Koristite nedozvoljene znakove!<br>Koristite samo slova.</h1></div>';
+        //}
+        echo '<div><h1>' . $_SESSION['header_text'] . '</h1></div>';
         ?>
     </div>
     <div class="flex-container">
@@ -102,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <th>Broj suglasnika</th>
                     <th>Broj samoglasnika</th>
                 </tr>
-                <?php
+            <?php
                 foreach ($words as $word) {
                     echo    "<tr>";
                     echo        "<td>$word[word]</td>";
@@ -112,8 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo    "</tr>";
                 }
 
-                echo '</table>';
-                ?>
+            echo '</table>';
+            ?>
         </div>
     </div>
 </body>
