@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $noCharacters = strlen($word);
     [$noConsonants, $noVowels] = consonants_vowels($word);
 
-
     if ($noCharacters == 0) {
         $_SESSION['header_text'] = 'Polje ne smije biti prazno!';
     } elseif ($noCharacters > $noConsonants + $noVowels) {
@@ -47,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,13 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             align-items: center;
         }
-
         .flex-container>div {
             margin: 10px;
             padding: 20px;
-
         }
-
         .center {
             margin: auto;
             width: 75%;
@@ -76,13 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="center">
         <?php
-        //if ($_SESSION['header_text'] == NULL) {
-        //    echo '<div><h1>Upišite željenu riječ!</h1></div>';
-        //} elseif ($_SESSION['header_text'] == 'Empty') {
-        //    echo '<div><h1>Polje ne smije biti prazno!</h1></div>';
-        //} elseif ($_SESSION['header_text'] == 'NonLetterUsed') {
-        //    echo '<div><h1>Koristite nedozvoljene znakove!<br>Koristite samo slova.</h1></div>';
-        //}
         echo '<div><h1>' . $_SESSION['header_text'] . '</h1></div>';
         ?>
     </div>
@@ -95,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br><br>
                 <input type="submit" value="pošalji">
             </form>
-
         </div>
         <div>
             <table border="1" , cellpadding="5">
@@ -114,11 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo        "<td>$word[noVowels]</td>";
                     echo    "</tr>";
                 }
-
             echo '</table>';
             ?>
         </div>
     </div>
 </body>
-
 </html>
